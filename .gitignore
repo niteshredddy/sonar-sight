@@ -1,0 +1,50 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+*.egg
+.venv/
+venv/
+env/
+
+# Model weights
+*.pt
+*.onnx
+*.engine
+*.trt
+runs/
+
+# Data (keep notes, ignore large files)
+data/raw/
+data/processed/
+data/synthetic/*.png
+data/synthetic/*.jpg
+data/augment_preview/*.png
+data/augment_preview/*.jpg
+!data/dataset_notes.md
+!data/synthetic/generate_synthetic.py
+
+# Node / Next.js
+node_modules/
+frontend/.next/
+frontend/out/
+.env*.local
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Uploads (runtime)
+backend/uploads/
+
+# Misc
+*.log

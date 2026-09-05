@@ -1,0 +1,126 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-dark: #070c14;
+    --bg-card: rgba(13, 22, 38, 0.85);
+    --border-accent: rgba(0, 212, 255, 0.25);
+    --accent-cyan: #00d4ff;
+    --accent-emerald: #10b981;
+    --accent-amber: #f59e0b;
+    --accent-crimson: #ef4444;
+  }
+
+  body {
+    background-color: var(--bg-dark);
+    color: #e2e8f0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    overflow-x: hidden;
+  }
+}
+
+/* Custom Tactical Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #09101d;
+}
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 3px;
+  border: 1px solid rgba(0, 212, 255, 0.2);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #00d4ff;
+}
+
+/* Radar Ping Marker Keyframe Animation */
+@keyframes tactical-ping {
+  0% {
+    transform: scale(0.6);
+    opacity: 1;
+    box-shadow: 0 0 0 0 rgba(0, 212, 255, 0.7);
+  }
+  70% {
+    transform: scale(1.4);
+    opacity: 0.3;
+    box-shadow: 0 0 0 14px rgba(0, 212, 255, 0);
+  }
+  100% {
+    transform: scale(0.6);
+    opacity: 1;
+    box-shadow: 0 0 0 0 rgba(0, 212, 255, 0);
+  }
+}
+
+.radar-ping-amber {
+  animation: tactical-ping 2s infinite cubic-bezier(0.4, 0, 0.6, 1);
+  background-color: #f59e0b;
+  box-shadow: 0 0 12px #f59e0b;
+}
+
+.radar-ping-crimson {
+  animation: tactical-ping 1.8s infinite cubic-bezier(0.4, 0, 0.6, 1);
+  background-color: #ef4444;
+  box-shadow: 0 0 12px #ef4444;
+}
+
+.radar-ping-cyan {
+  animation: tactical-ping 2.2s infinite cubic-bezier(0.4, 0, 0.6, 1);
+  background-color: #00d4ff;
+  box-shadow: 0 0 12px #00d4ff;
+}
+
+.radar-ping-emerald {
+  animation: tactical-ping 2s infinite cubic-bezier(0.4, 0, 0.6, 1);
+  background-color: #10b981;
+  box-shadow: 0 0 12px #10b981;
+}
+
+/* Tactical Reticle Bracket Styles */
+.tactical-reticle {
+  position: relative;
+  transition: all 0.2s ease-in-out;
+}
+.tactical-reticle:hover {
+  filter: brightness(1.25);
+  box-shadow: 0 0 15px rgba(0, 212, 255, 0.4);
+}
+
+/* Glassmorphism Panel Utility */
+.glass-panel {
+  background: rgba(11, 20, 36, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(0, 212, 255, 0.18);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
+}
+
+.glass-panel-amber {
+  background: rgba(20, 16, 8, 0.85);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+}
+
+/* Tactical Range Sliders */
+input[type="range"] {
+  accent-color: #00d4ff;
+}
+
+/* Leaflet Dark Map Overrides */
+.leaflet-container {
+  background: #060b13 !important;
+  font-family: inherit;
+}
+.leaflet-popup-content-wrapper {
+  background: rgba(11, 20, 36, 0.95) !important;
+  color: #f1f5f9 !important;
+  border: 1px solid rgba(0, 212, 255, 0.3) !important;
+  backdrop-filter: blur(8px);
+  border-radius: 6px !important;
+}
+.leaflet-popup-tip {
+  background: rgba(11, 20, 36, 0.95) !important;
+}
