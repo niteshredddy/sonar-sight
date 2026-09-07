@@ -44,10 +44,10 @@ export default function MapComponent({
 
     L.control.zoom({ position: "topright" }).addTo(map);
 
-    // 1. Dark Basemap (free, no API key required)
-    L.tileLayer("https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png", {
-      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://stadiamaps.com/">Stadia Maps</a>',
-      maxZoom: 20,
+    // 1. Dark Basemap (OSM tiles + CSS dark filter, no API key required)
+    L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+      maxZoom: 19,
     }).addTo(map);
 
     // 2. OpenSeaMap Bathymetry / Nautical Seamark Overlay

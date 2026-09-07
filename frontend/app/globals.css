@@ -114,6 +114,9 @@ input[type="range"] {
   background: #060b13 !important;
   font-family: inherit;
 }
+.leaflet-tile-pane {
+  filter: invert(1) hue-rotate(180deg) brightness(0.85) contrast(1.1);
+}
 .leaflet-popup-content-wrapper {
   background: rgba(11, 20, 36, 0.95) !important;
   color: #f1f5f9 !important;
